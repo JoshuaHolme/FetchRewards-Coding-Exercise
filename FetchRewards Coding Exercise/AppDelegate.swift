@@ -13,7 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Create a Navigation Controller and set the MasterViewController as the Root View Controller
+        let masterVC = MasterViewController()
+        let navigationController = UINavigationController(rootViewController: masterVC)
+        
+        // Give the View a Background
+        if #available(iOS 13.0, *) {
+            navigationController.view.backgroundColor = .systemBackground
+        } else {
+            navigationController.view.backgroundColor = .white
+        }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
@@ -21,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
+        let masterVC = MasterViewController()
+        let navigationController = UINavigationController(rootViewController: masterVC)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
