@@ -18,3 +18,6 @@ The `formatLocation()` function is also tested, but since it does not have the d
 
 ## Building and Running The Application
 This project has no dependencies, and supports iOS 12.1+. To run the application, simply clone the repository, open the project file, and build and run to a compatible device.
+
+
+#### stadium by Iconbox from the Noun Project
